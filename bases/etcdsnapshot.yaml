@@ -1,0 +1,19 @@
+# apiVersion: k3s.cattle.io/v1
+# kind: ETCDSnapshotFile
+# metadata:
+#   name: kustomize-etcd-snapshot  
+#   namespace: kube-system 
+# spec:
+#   storage:            
+#     persistentVolumeClaimName: postgres-pvc
+
+apiVersion: k3s.cattle.io/v1
+kind: ETCDSnapshotFile
+metadata:
+  name: kustomize-etcd-snapshot
+  namespace: kube-system
+spec:
+  # Example spec you might customize
+  location: /home/ubuntu/kube-kustomize/backup-kustomize/
+  snapshotName: my-snapshot
+  nodeName: node-name

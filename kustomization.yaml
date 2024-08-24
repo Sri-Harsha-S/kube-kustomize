@@ -3,11 +3,14 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
+  - secrets/postgres-secret.yaml         # Add this line
+  - configmaps/postgres-config.yaml
   - bases/fastapi.yaml
   - bases/pgadmin.yaml
   - bases/postgres.yaml
   - bases/postgres-pvc.yaml
-
+  - bases/hpa.yaml
+  - bases/etcdsnapshot.yaml
 configMapGenerator:
   - name: app-config
     literals:
