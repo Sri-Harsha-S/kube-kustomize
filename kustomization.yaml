@@ -1,0 +1,17 @@
+#/home/ubuntu/kube-kustomize/kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - bases/fastapi.yaml
+  - bases/pgadmin.yaml
+  - bases/postgres.yaml
+  - bases/postgres-pvc.yaml
+
+configMapGenerator:
+  - name: app-config
+    literals:
+      - APP_HOST=0.0.0.0
+      - APP_PORT=5000
+
+namespace: kustomize
