@@ -10,7 +10,8 @@ resources:
   - bases/postgres.yaml
   - bases/postgres-pvc.yaml
   - bases/hpa.yaml
-  - bases/etcdsnapshot.yaml
+  #- bases/etcdsnapshot.yaml
+  - bases/ingress.yaml
 configMapGenerator:
   - name: app-config
     literals:
