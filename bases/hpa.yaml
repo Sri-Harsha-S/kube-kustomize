@@ -9,7 +9,7 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment           # Change to the correct kind if not Deployment
-    name: fastapi-hpa # Replace with the name of your Deployment
+    name: fastapi # Replace with the name of your Deployment
   metrics:
     - type: Resource
       resource:
